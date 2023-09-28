@@ -15,7 +15,11 @@ const config: Config = {
       },
       colors: {
         "gray-200": "#121214",
-        "gray-300": "#202024"
+        "gray-300": "#202024",
+        "white-200": "#cbcbd0"
+      },
+      fontFamily: {
+        'roboto': ['Roboto', 'sans-serif'],
       }
     },
   },
