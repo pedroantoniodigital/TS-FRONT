@@ -12,7 +12,7 @@ export default function CustomizedInput({ icon, ...props }:InputProps) {
       <div className="min-h-[32px] min-w-[32px] flex justify-center items-center text-gray-300 group-focus-within:text-purple-700 transition ease-in-out duration-500">
         {icon}
       </div>
-      <input className='bg-transparent outline-none ring-0 pl-2' {...props}/>
+      <input className='bg-transparent outline-none ring-0 pl-2 text-[#ffffff]' {...props}/>
     </div>
   )
 } 
