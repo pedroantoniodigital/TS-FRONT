@@ -4,7 +4,28 @@ import CustomizedInput from '@/components/forms/input'
 import Image from 'next/image'
 import { Envelope, Key } from 'phosphor-react'
 
+import { useEffect } from 'react';
+
+
 export default function Login() {
+
+  useEffect(() => {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString)
+    const codeParam = urlParams.get('code')
+    console.log(codeParam);
+  }, [])
+  
+  const accessToken = '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';
+
+  const CLIENT_ID = '48505ece774fccaa68b6'
+  const authUrl = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}`;
+
+  function loginWithGithub() {
+  
+    window.location.assign(authUrl);
+  }
+
   return (
     <main className="flex min-h-screen flex-col sm:flex-row items-center justify-center gap-16 bg-gray-200">
       <div className='flex flex-col space-y-8'>
@@ -53,7 +74,7 @@ export default function Login() {
           <div>
             Ou entre com
           </div>
-          <div className='bg-[#323138] hover:bg-[#54525e] cursor-pointer text-center transition ease-in-out duration-500 w-[200px] h-[40px] flex items-center justify-center rounded-[8px]'>
+          <div onClick={loginWithGithub} className='bg-[#323138] hover:bg-[#54525e] cursor-pointer text-center transition ease-in-out duration-500 w-[200px] h-[40px] flex items-center justify-center rounded-[8px]'>
             <Image 
               className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
               src="/images/icone-github-violet.png"
